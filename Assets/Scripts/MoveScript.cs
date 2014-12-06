@@ -34,8 +34,7 @@ public class MoveScript : MonoBehaviour
 				
 						}
 				
-						//menambah score
-						//Jika melewati player
+						//menambah score, jika melewati player
 						if (gameObject.transform.position.x < player.transform.position.x && !flagScore) {
 								GameManager.score += 1;
 								flagScore = true;

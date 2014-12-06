@@ -20,7 +20,18 @@ public class GameManager : MonoBehaviour
 		// Update is called once per frame
 		void Update ()
 		{	
-				scoreText.GetComponent<TextMesh> ().text = "Score :" + score;
+				switch (gamestatus) {
+				case GameStatus.Play:
+						scoreText.GetComponent<TextMesh> ().text = "Score :" + score;
+						break;
+				case GameStatus.GameOver:
+						scoreText.GetComponent<TextMesh> ().text = "Your Score : " + score + "\nTap To Retry";
+						break;
+				case GameStatus.Wait:
+						scoreText.GetComponent<TextMesh> ().text = "Tap To Play";
+						break;
+				}
+				
 		}
 		
 		
